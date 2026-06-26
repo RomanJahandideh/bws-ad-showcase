@@ -5,11 +5,11 @@ const carouselPost = {
   hashtags: "#BuiltWithScience #Protein #Hypertrophy #NutritionScience",
   slides: [
     {
-      image: "./assets/slide-1.png",
+      image: "./assets/slide-1.jpg",
       alt: "How much protein to maximize muscle growth, Built With Science hook slide",
     },
     {
-      image: "./assets/slide-2.png",
+      image: "./assets/slide-2.jpg",
       alt: "1.6 grams per kilogram is enough, Built With Science research insight slide",
     },
     {
