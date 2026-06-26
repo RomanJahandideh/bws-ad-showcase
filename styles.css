@@ -142,317 +142,37 @@ button {
 .slide {
   flex: 0 0 100%;
   position: relative;
-  padding: 54px 54px 48px;
+  padding: 0;
   color: var(--bws-dark);
   user-select: none;
 }
 
-.slide::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: var(--slide-bg);
-}
-
-.slide-content {
-  position: relative;
-  z-index: 1;
-  height: 100%;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  gap: 18px;
-}
-
-.slide-topline,
-.footer-strip {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: #606060;
-  font-weight: 900;
-  font-size: 13px;
-  text-transform: uppercase;
-}
-
-.slide-kicker {
-  color: var(--bws-blue);
-}
-
-.slide-count {
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  background: var(--bws-dark);
-  color: var(--bws-white);
-  display: grid;
-  place-items: center;
-  font-family: "Oswald", Impact, sans-serif;
-  font-size: 18px;
-}
-
-.slide-main {
-  display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(260px, 1fr);
-  align-items: center;
-  gap: 26px;
-}
-
-.headline {
-  max-width: 540px;
-  font-family: "Oswald", Impact, sans-serif;
-  font-size: 62px;
-  line-height: 0.95;
-  font-weight: 700;
-  text-transform: uppercase;
-  margin: 0;
-}
-
-.headline span {
-  color: var(--bws-blue);
-}
-
-.support-copy {
-  max-width: 430px;
-  margin: 16px 0 0;
-  color: #424242;
-  font-size: 17px;
-  line-height: 1.38;
-  font-weight: 900;
-}
-
-.visual-stage {
-  display: grid;
-  align-items: center;
-  min-height: 392px;
-}
-
-.target-visual {
-  position: relative;
-  min-height: 382px;
-}
-
-.target-visual::before {
-  content: "";
-  position: absolute;
-  inset: 38px 0 auto auto;
-  width: 255px;
-  height: 255px;
-  border-radius: 50%;
-  background: rgba(64, 110, 223, 0.12);
-}
-
-.plate {
-  position: absolute;
-  right: 26px;
-  top: 44px;
-  width: 252px;
-  height: 252px;
-  border-radius: 50%;
+.image-slide {
   background: var(--bws-white);
-  border: 12px solid #edf1ff;
-  box-shadow: 0 22px 48px rgba(30, 30, 30, 0.16);
 }
 
-.food {
-  position: absolute;
+.image-slide img {
+  width: 100%;
+  height: 100%;
   display: block;
-}
-
-.steak {
-  width: 118px;
-  height: 74px;
-  border-radius: 55% 45% 48% 52%;
-  background: var(--bws-blue);
-  left: 52px;
-  top: 62px;
-  transform: rotate(-16deg);
-}
-
-.egg {
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
+  object-fit: contain;
   background: var(--bws-white);
-  border: 7px solid var(--bws-dark);
-  right: 46px;
-  bottom: 56px;
+  pointer-events: none;
 }
 
-.egg::after {
-  content: "";
+.image-count {
   position: absolute;
-  width: 28px;
+  top: 16px;
+  right: 16px;
+  min-width: 44px;
   height: 28px;
-  border-radius: 50%;
-  background: var(--bws-gold);
-  left: 15px;
-  top: 15px;
-}
-
-.greens {
-  width: 86px;
-  height: 52px;
-  border-radius: 50%;
-  background: #7bbf6a;
-  left: 46px;
-  bottom: 54px;
-  transform: rotate(18deg);
-}
-
-.protein-meter {
-  position: absolute;
-  left: 0;
-  bottom: 20px;
-  width: 270px;
-  min-height: 175px;
-  background: var(--bws-dark);
+  border-radius: 99px;
+  background: rgba(30, 30, 30, 0.72);
   color: var(--bws-white);
-  padding: 22px;
-  box-shadow: 10px 10px 0 var(--bws-gold);
-}
-
-.meter-copy {
-  display: flex;
-  align-items: end;
-  gap: 10px;
-}
-
-.meter-copy strong {
-  font-family: "Oswald", Impact, sans-serif;
-  font-size: 82px;
-  line-height: 0.78;
-}
-
-.meter-copy span {
-  color: var(--bws-gold);
-  font-weight: 900;
-  font-size: 22px;
-}
-
-.meter-line {
-  height: 10px;
-  margin: 24px 0 12px;
-  background: linear-gradient(90deg, var(--bws-blue) 0 68%, rgba(255, 255, 255, 0.18) 69%);
-}
-
-.protein-meter p {
-  margin: 0;
-  color: #e8e8e8;
-  font-weight: 900;
-}
-
-.science-visual {
-  display: grid;
-  gap: 16px;
-}
-
-.axis-chart {
-  position: relative;
-  height: 330px;
-  border-left: 5px solid var(--bws-dark);
-  border-bottom: 5px solid var(--bws-dark);
-  background:
-    linear-gradient(rgba(64, 110, 223, 0.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(64, 110, 223, 0.1) 1px, transparent 1px);
-  background-size: 100% 66px, 78px 100%;
-}
-
-.axis-chart svg {
-  position: absolute;
-  inset: 36px 14px 38px 10px;
-  width: calc(100% - 24px);
-  height: calc(100% - 74px);
-  overflow: visible;
-}
-
-.axis-chart path {
-  fill: none;
-  stroke: var(--bws-dark);
-  stroke-width: 9;
-  stroke-linecap: round;
-}
-
-.sweet-spot {
-  position: absolute;
-  left: 44%;
-  right: 20%;
-  top: 0;
-  bottom: 0;
-  background: rgba(223, 177, 64, 0.28);
-  border-left: 3px solid var(--bws-gold);
-}
-
-.plot-dot {
-  position: absolute;
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  background: var(--bws-blue);
-  border: 3px solid var(--bws-white);
-  box-shadow: 0 0 0 2px var(--bws-dark);
-  left: var(--x);
-  bottom: var(--y);
-}
-
-.chart-note {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: var(--bws-dark);
-  color: var(--bws-white);
-  padding: 16px 18px;
-}
-
-.chart-note strong {
-  font-family: "Oswald", Impact, sans-serif;
-  font-size: 28px;
-  text-transform: uppercase;
-}
-
-.chart-note span {
-  color: var(--bws-gold);
-  font-weight: 900;
-}
-
-.takeaway-list {
-  display: grid;
-  gap: 18px;
-}
-
-.takeaway-row {
-  display: grid;
-  grid-template-columns: 74px 1fr;
-  align-items: center;
-  min-height: 96px;
-  background: var(--bws-white);
-  border-left: 12px solid var(--bws-blue);
-  box-shadow: 0 12px 28px rgba(30, 30, 30, 0.12);
-}
-
-.takeaway-row:nth-child(2) {
-  border-left-color: var(--bws-gold);
-}
-
-.takeaway-row strong {
-  height: 100%;
   display: grid;
   place-items: center;
-  background: var(--bws-dark);
-  color: var(--bws-white);
-  font-family: "Oswald", Impact, sans-serif;
-  font-size: 30px;
-}
-
-.takeaway-row span {
-  padding: 18px 20px;
-  color: #333333;
-  font-size: 18px;
-  line-height: 1.28;
+  font-size: 12px;
   font-weight: 900;
-}
-
-.takeaway-row b {
-  color: var(--bws-blue);
 }
 
 .hero-equation {
