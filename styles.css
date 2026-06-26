@@ -471,55 +471,43 @@ button {
 
 .scroll-cue {
   width: min(1060px, calc(100vw - 130px));
-  min-height: 58px;
+  min-height: 54px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 12px;
+  justify-content: space-between;
   color: var(--bws-white);
   text-decoration: none;
-  border: 1px solid var(--line);
-  background: #0d0d0d;
+  border-top: 1px solid #252525;
+  border-bottom: 1px solid #252525;
+  background: transparent;
   font-weight: 900;
   text-transform: uppercase;
+  letter-spacing: 0.02em;
+  padding: 0 4px;
 }
 
 .scroll-cue strong {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background: var(--bws-blue);
-  display: grid;
-  place-items: center;
+  width: auto;
+  height: auto;
+  border-radius: 0;
+  background: transparent;
+  display: block;
+  color: #bdbdbd;
+  font-size: 12px;
 }
 
 .contact-section {
   position: relative;
-  overflow: hidden;
   width: min(1060px, calc(100vw - 130px));
-  min-height: 540px;
+  min-height: 420px;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 390px;
-  gap: 36px;
-  align-items: end;
-  padding: 58px;
-  border: 1px solid var(--line);
-  background:
-    radial-gradient(circle at 26% 24%, rgba(64, 110, 223, 0.22), transparent 26%),
-    radial-gradient(circle at 70% 78%, rgba(223, 177, 64, 0.14), transparent 28%),
-    #070707;
-}
-
-.contact-ambient {
-  position: absolute;
-  inset: 44px auto auto 52px;
-  width: 220px;
-  height: 220px;
-  border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  box-shadow:
-    0 0 70px rgba(64, 110, 223, 0.34),
-    inset 0 0 80px rgba(64, 110, 223, 0.12);
+  grid-template-columns: minmax(0, 1fr) 340px;
+  gap: 64px;
+  align-items: start;
+  padding: 72px 4px 88px;
+  border-top: 1px solid #252525;
+  border-bottom: 1px solid #252525;
+  background: #070707;
 }
 
 .contact-copy,
@@ -528,81 +516,76 @@ button {
   z-index: 1;
 }
 
-.contact-kicker {
-  color: var(--bws-gold);
-  font-weight: 900;
-  font-size: 12px;
-  text-transform: uppercase;
-}
-
 .contact-copy h2 {
-  margin: 18px 0 8px;
+  margin: 0 0 14px;
   font-family: "Oswald", Impact, sans-serif;
-  font-size: clamp(54px, 8vw, 104px);
-  line-height: 0.9;
+  font-size: clamp(48px, 7vw, 92px);
+  line-height: 0.92;
   text-transform: uppercase;
+  color: #ffffff;
 }
 
 .contact-title {
-  margin: 0 0 26px;
-  color: var(--bws-blue);
+  margin: 0 0 34px;
+  color: #cfcfcf;
   font-family: "Oswald", Impact, sans-serif;
-  font-size: 24px;
+  font-size: 20px;
   text-transform: uppercase;
 }
 
 .contact-copy p:not(.contact-title) {
-  max-width: 600px;
+  max-width: 620px;
   margin: 0;
-  color: #d7d7d7;
-  font-size: 17px;
-  line-height: 1.55;
-  font-weight: 700;
+  color: #c8c8c8;
+  font-size: 16px;
+  line-height: 1.7;
+  font-weight: 400;
 }
 
 .contact-panel {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  padding: 24px;
+  background: transparent;
+  border: 0;
+  padding: 0;
 }
 
 .contact-panel h3 {
-  margin: 0 0 18px;
+  margin: 0 0 22px;
   font-family: "Oswald", Impact, sans-serif;
-  font-size: 32px;
+  font-size: 26px;
   text-transform: uppercase;
+  color: #ffffff;
 }
 
 .contact-links {
   display: grid;
-  gap: 10px;
+  gap: 0;
+  border-top: 1px solid #2d2d2d;
 }
 
 .contact-links a {
-  display: grid;
-  gap: 4px;
-  padding: 14px 16px;
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 15px 0;
   color: var(--bws-white);
   text-decoration: none;
-  background: #111111;
-  border-left: 4px solid var(--bws-blue);
-}
-
-.contact-links a:nth-child(3n) {
-  border-left-color: var(--bws-gold);
+  background: transparent;
+  border-bottom: 1px solid #2d2d2d;
 }
 
 .contact-links a:hover {
-  background: #191919;
+  color: #ffffff;
 }
 
 .contact-links strong {
   font-weight: 900;
+  color: #ffffff;
 }
 
 .contact-links span {
-  color: var(--muted);
+  color: #a8a8a8;
   font-size: 13px;
+  text-align: right;
 }
 
 @media (max-width: 900px) {
@@ -627,7 +610,8 @@ button {
 
   .contact-section {
     grid-template-columns: 1fr;
-    padding: 32px 24px;
+    gap: 38px;
+    padding: 48px 0 64px;
   }
 
   .media-panel {
