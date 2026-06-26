@@ -310,17 +310,22 @@ button {
   background: rgba(30, 30, 30, 0.25);
   color: white;
   font-size: 30px;
-  display: grid;
-  place-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  padding: 0 0 3px;
   z-index: 4;
 }
 
 .prev {
   left: 16px;
+  padding-right: 2px;
 }
 
 .next {
   right: 16px;
+  padding-left: 2px;
 }
 
 .slide-indicators {
