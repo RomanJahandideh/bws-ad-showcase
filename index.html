@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Instagram Apple Mobile Showcase</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <aside class="rail" aria-label="Instagram navigation">
+      <div class="brand-mark">◎</div>
+      <nav>
+        <button aria-label="Home">⌂</button>
+        <button aria-label="Reels">▷</button>
+        <button aria-label="Messages">✈</button>
+        <button aria-label="Search">⌕</button>
+        <button aria-label="Notifications">♡</button>
+        <button aria-label="Create">＋</button>
+      </nav>
+      <button class="profile-dot" aria-label="Profile"></button>
+    </aside>
+
+    <main class="page-shell">
+      <section class="post-window" aria-label="Instagram-style carousel post">
+        <div class="media-panel">
+          <div class="top-dots" aria-hidden="true"></div>
+          <div class="carousel" id="carousel" tabindex="0" aria-live="polite">
+            <div class="track" id="track"></div>
+          </div>
+          <button class="nav-arrow prev" id="prevSlide" aria-label="Previous image">‹</button>
+          <button class="nav-arrow next" id="nextSlide" aria-label="Next image">›</button>
+          <div class="slide-indicators" id="slideIndicators" aria-label="Image position"></div>
+        </div>
+
+        <aside class="caption-panel">
+          <header class="post-header">
+            <div class="avatar"></div>
+            <div>
+              <strong>applemobile.daily</strong>
+              <span>Original audio</span>
+            </div>
+            <button class="follow">Following</button>
+            <button class="more" aria-label="More options">•••</button>
+          </header>
+
+          <div class="option-switch" role="tablist" aria-label="Choose phone option">
+            <button class="active" data-option="pro" role="tab" aria-selected="true">Option 1</button>
+            <button data-option="air" role="tab" aria-selected="false">Option 2</button>
+          </div>
+
+          <div class="caption-scroll">
+            <p class="caption">
+              <strong>applemobile.daily</strong>
+              <span id="captionText"></span>
+            </p>
+            <p class="hashtags" id="hashtags"></p>
+            <p class="comment"><strong>design.notes</strong> This feels like the Apple page dropped into an Instagram carousel.</p>
+            <p class="comment"><strong>mobile.gallery</strong> Swipe the post to see all three looks.</p>
+          </div>
+
+          <footer class="actions">
+            <div class="action-row">
+              <button aria-label="Like">♡</button>
+              <button aria-label="Comment">◯</button>
+              <button aria-label="Share">↗</button>
+              <button class="save" aria-label="Save">□</button>
+            </div>
+            <strong id="likes">18,420 likes</strong>
+            <span class="date">4 days ago</span>
+            <label class="comment-box">
+              <span>Add a comment...</span>
+              <input aria-label="Add a comment" />
+            </label>
+          </footer>
+        </aside>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
