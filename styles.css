@@ -227,45 +227,9 @@ button {
   padding: 14px 16px;
   border-bottom: 1px solid var(--line);
   display: grid;
-  grid-template-columns: 42px 1fr auto auto;
+  grid-template-columns: 42px 1fr auto;
   align-items: center;
   gap: 12px;
-}
-
-.more-menu {
-  position: absolute;
-  top: 100%;
-  right: 16px;
-  z-index: 6;
-  margin-top: 6px;
-  min-width: 210px;
-  background: var(--panel);
-  border: 1px solid var(--line);
-  display: grid;
-  box-shadow: 0 10px 24px var(--shadow);
-}
-
-.more-menu a,
-.more-menu button {
-  display: block;
-  width: 100%;
-  text-align: left;
-  padding: 12px 14px;
-  background: transparent;
-  color: var(--bws-white);
-  text-decoration: none;
-  font-size: 13px;
-  border-bottom: 1px solid var(--line);
-}
-
-.more-menu a:last-child,
-.more-menu button:last-child {
-  border-bottom: 0;
-}
-
-.more-menu a:hover,
-.more-menu button:hover {
-  background: #1a1a1a;
 }
 
 .follow.following {
@@ -298,13 +262,9 @@ button {
   font-size: 12px;
 }
 
-.follow,
-.more {
+.follow {
   background: transparent;
   font-weight: 900;
-}
-
-.follow {
   color: var(--bws-blue);
 }
 

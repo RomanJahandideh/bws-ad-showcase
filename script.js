@@ -185,30 +185,6 @@ followBtn.addEventListener("click", () => {
   followBtn.textContent = following ? "Following" : "Follow";
 });
 
-const moreBtn = document.getElementById("moreBtn");
-const moreMenu = document.getElementById("moreMenu");
-moreBtn.addEventListener("click", () => {
-  const open = moreMenu.hasAttribute("hidden");
-  if (open) moreMenu.removeAttribute("hidden");
-  else moreMenu.setAttribute("hidden", "");
-  moreBtn.setAttribute("aria-expanded", String(open));
-});
-document.addEventListener("click", (event) => {
-  if (!moreMenu.contains(event.target) && event.target !== moreBtn && !moreMenu.hasAttribute("hidden")) {
-    moreMenu.setAttribute("hidden", "");
-    moreBtn.setAttribute("aria-expanded", "false");
-  }
-});
-document.getElementById("copyLinkBtn").addEventListener("click", () => {
-  copyPageLink();
-  moreMenu.setAttribute("hidden", "");
-  moreBtn.setAttribute("aria-expanded", "false");
-});
-document.getElementById("viewSourceLink").addEventListener("click", () => {
-  moreMenu.setAttribute("hidden", "");
-  moreBtn.setAttribute("aria-expanded", "false");
-});
-
 document.querySelectorAll(".accordion-trigger").forEach((trigger) => {
   trigger.addEventListener("click", () => {
     const panel = document.getElementById(trigger.getAttribute("aria-controls"));
