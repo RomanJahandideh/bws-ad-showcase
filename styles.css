@@ -610,12 +610,49 @@ button {
   padding: 0;
 }
 
+.contact-panel-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
 .contact-panel h3 {
-  margin: 0 0 22px;
+  margin: 0;
   font-family: "Oswald", Impact, sans-serif;
   font-size: 26px;
   text-transform: uppercase;
   color: #ffffff;
+}
+
+.contact-qr {
+  flex: none;
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.contact-qr img {
+  display: block;
+  width: 100px;
+  height: 100px;
+  background: var(--bws-white);
+  border: 1px solid var(--line);
+  padding: 8px;
+}
+
+.contact-qr span {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.contact-qr:hover img {
+  border-color: var(--bws-gold);
 }
 
 .contact-links {
