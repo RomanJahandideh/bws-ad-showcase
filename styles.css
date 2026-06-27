@@ -81,14 +81,6 @@ button {
   background: #171717;
 }
 
-.profile-dot {
-  margin-top: auto;
-  background:
-    radial-gradient(circle at 50% 36%, var(--bws-blue) 0 18%, transparent 19%),
-    radial-gradient(circle at 50% 78%, var(--bws-gold) 0 22%, var(--bws-dark) 23%) !important;
-  border: 1px solid #545454 !important;
-}
-
 .page-shell {
   min-height: 100vh;
   padding: 46px 24px 46px 100px;

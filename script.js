@@ -223,4 +223,3 @@ document.getElementById("navLogo").addEventListener("click", () => carousel.scro
 document.getElementById("navHome").addEventListener("click", () => carousel.scrollIntoView({ behavior: "smooth", block: "start" }));
 document.getElementById("navMessages").addEventListener("click", () => document.getElementById("contact-info").scrollIntoView({ behavior: "smooth", block: "start" }));
 document.getElementById("navCreate").addEventListener("click", () => document.querySelector(".process-section").scrollIntoView({ behavior: "smooth", block: "start" }));
-document.getElementById("profileDot").addEventListener("click", () => window.open("https://romanjahandideh.com", "_blank", "noreferrer"));
