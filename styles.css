@@ -162,131 +162,6 @@ button {
   font-weight: 900;
 }
 
-.hero-equation {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
-  gap: 20px;
-}
-
-.number-card {
-  min-height: 190px;
-  border: 4px solid var(--bws-dark);
-  background: var(--bws-white);
-  display: grid;
-  place-items: center;
-  padding: 24px;
-  box-shadow: 10px 10px 0 var(--bws-blue);
-}
-
-.number-card strong {
-  display: block;
-  font-family: "Oswald", Impact, sans-serif;
-  font-size: 76px;
-  line-height: 0.9;
-}
-
-.number-card span {
-  display: block;
-  margin-top: 10px;
-  color: #575757;
-  font-weight: 900;
-  text-align: center;
-}
-
-.versus {
-  width: 58px;
-  height: 58px;
-  border-radius: 50%;
-  background: var(--bws-gold);
-  color: var(--bws-dark);
-  display: grid;
-  place-items: center;
-  font-family: "Oswald", Impact, sans-serif;
-  font-size: 24px;
-  box-shadow: 0 10px 18px var(--shadow);
-}
-
-.scatter-card {
-  background: var(--bws-white);
-  border: 4px solid var(--bws-dark);
-  padding: 26px;
-  box-shadow: 10px 10px 0 var(--bws-gold);
-}
-
-.chart {
-  height: 260px;
-  position: relative;
-  border-left: 5px solid var(--bws-dark);
-  border-bottom: 5px solid var(--bws-dark);
-  background:
-    linear-gradient(rgba(64, 110, 223, 0.12) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(64, 110, 223, 0.12) 1px, transparent 1px);
-  background-size: 100% 52px, 92px 100%;
-}
-
-.dot {
-  position: absolute;
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background: var(--bws-blue);
-  border: 2px solid var(--bws-dark);
-  left: var(--x);
-  bottom: var(--y);
-}
-
-.range-band {
-  position: absolute;
-  left: 48%;
-  right: 12%;
-  top: 0;
-  bottom: 0;
-  background: rgba(223, 177, 64, 0.25);
-  border-left: 2px dashed var(--bws-gold);
-  border-right: 2px dashed var(--bws-gold);
-}
-
-.chart-label {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 12px;
-  color: #505050;
-  font-size: 13px;
-  font-weight: 900;
-}
-
-.takeaway-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-}
-
-.takeaway-card {
-  min-height: 210px;
-  background: var(--bws-white);
-  border: 4px solid var(--bws-dark);
-  padding: 18px;
-  box-shadow: 8px 8px 0 rgba(64, 110, 223, 0.82);
-}
-
-.takeaway-card strong {
-  display: block;
-  font-family: "Oswald", Impact, sans-serif;
-  font-size: 40px;
-  line-height: 0.96;
-  color: var(--bws-blue);
-  text-transform: uppercase;
-}
-
-.takeaway-card span {
-  display: block;
-  margin-top: 12px;
-  color: #454545;
-  font-weight: 900;
-  line-height: 1.28;
-}
-
 .nav-arrow {
   position: absolute;
   top: 50%;
@@ -446,7 +321,7 @@ button {
 }
 
 .hashtags {
-  color: #83a2ff;
+  color: var(--bws-blue);
   font-weight: 700;
 }
 
@@ -479,7 +354,7 @@ button {
 }
 
 .action-row button.liked {
-  color: #ff3040;
+  color: var(--bws-blue);
 }
 
 .save.saved {
@@ -487,7 +362,7 @@ button {
 }
 
 #navLike.liked {
-  color: #ff3040;
+  color: var(--bws-blue);
 }
 
 .toast {
@@ -860,28 +735,5 @@ button {
 
   .slide {
     padding: 44px 28px;
-  }
-
-  .headline {
-    font-size: 42px;
-  }
-
-  .support-copy {
-    font-size: 15px;
-  }
-
-  .slide-main,
-  .hero-equation,
-  .takeaway-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .versus {
-    margin: -4px auto;
-  }
-
-  .number-card,
-  .takeaway-card {
-    min-height: auto;
   }
 }
