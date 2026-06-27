@@ -54,7 +54,9 @@ button {
   z-index: 5;
 }
 
-.brand-mark {
+.rail .brand-mark {
+  background: transparent;
+  padding: 0;
   color: var(--bws-blue);
   font-family: "Oswald", Impact, sans-serif;
   font-size: 35px;
@@ -109,18 +111,6 @@ button {
   overflow: hidden;
   background: var(--bws-white);
   min-height: 660px;
-}
-
-.top-dots {
-  position: absolute;
-  z-index: 3;
-  top: 14px;
-  left: 50%;
-  width: 92px;
-  height: 4px;
-  transform: translateX(-50%);
-  border-radius: 99px;
-  background: rgba(30, 30, 30, 0.12);
 }
 
 .carousel,
@@ -365,6 +355,7 @@ button {
 }
 
 .post-header {
+  position: relative;
   min-height: 72px;
   padding: 14px 16px;
   border-bottom: 1px solid var(--line);
@@ -372,6 +363,46 @@ button {
   grid-template-columns: 42px 1fr auto auto;
   align-items: center;
   gap: 12px;
+}
+
+.more-menu {
+  position: absolute;
+  top: 100%;
+  right: 16px;
+  z-index: 6;
+  margin-top: 6px;
+  min-width: 210px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  display: grid;
+  box-shadow: 0 10px 24px var(--shadow);
+}
+
+.more-menu a,
+.more-menu button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 12px 14px;
+  background: transparent;
+  color: var(--bws-white);
+  text-decoration: none;
+  font-size: 13px;
+  border-bottom: 1px solid var(--line);
+}
+
+.more-menu a:last-child,
+.more-menu button:last-child {
+  border-bottom: 0;
+}
+
+.more-menu a:hover,
+.more-menu button:hover {
+  background: #1a1a1a;
+}
+
+.follow.following {
+  color: var(--muted);
 }
 
 .avatar {
@@ -455,6 +486,39 @@ button {
   margin-left: auto;
 }
 
+.action-row button.liked {
+  color: #ff3040;
+}
+
+.save.saved {
+  color: var(--bws-gold);
+}
+
+#navLike.liked {
+  color: #ff3040;
+}
+
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 32px;
+  transform: translate(-50%, 12px);
+  z-index: 20;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  color: var(--bws-white);
+  padding: 12px 20px;
+  font-size: 13px;
+  font-weight: 700;
+  opacity: 0;
+  transition: opacity 200ms ease, transform 200ms ease;
+}
+
+.toast.visible {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
 .comment-box {
   border-top: 1px solid var(--line);
   padding-top: 12px;
@@ -494,6 +558,177 @@ button {
   display: block;
   color: #bdbdbd;
   font-size: 12px;
+}
+
+.process-section {
+  width: min(1060px, calc(100vw - 130px));
+  padding: 56px 4px 64px;
+  border-top: 1px solid #252525;
+}
+
+.process-section h2 {
+  margin: 0 0 8px;
+  font-family: "Oswald", Impact, sans-serif;
+  font-size: clamp(32px, 4vw, 44px);
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.process-intro {
+  margin: 0 0 36px;
+  color: #c8c8c8;
+  font-size: 15px;
+}
+
+.process-steps {
+  list-style: none;
+  margin: 0 0 48px;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px 32px;
+}
+
+.process-steps li {
+  display: flex;
+  gap: 14px;
+}
+
+.step-index {
+  flex: none;
+  font-family: "Oswald", Impact, sans-serif;
+  font-size: 22px;
+  color: var(--bws-blue);
+}
+
+.process-steps h3 {
+  margin: 0 0 6px;
+  font-family: "Oswald", Impact, sans-serif;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.process-steps p {
+  margin: 0;
+  color: #b7b7b7;
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+
+.recommendations-section {
+  width: min(1060px, calc(100vw - 130px));
+  padding: 0 4px 64px;
+}
+
+.recommendations-section h2 {
+  margin: 0 0 8px;
+  font-family: "Oswald", Impact, sans-serif;
+  font-size: clamp(32px, 4vw, 44px);
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.accordion {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.accordion-item {
+  background: var(--panel);
+  border: 1px solid var(--line);
+}
+
+.accordion-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 20px;
+  background: transparent;
+  text-align: left;
+}
+
+.accordion-index {
+  flex: none;
+  font-family: "Oswald", Impact, sans-serif;
+  font-size: 20px;
+  color: var(--bws-blue);
+}
+
+.accordion-title {
+  flex: 1;
+  font-family: "Oswald", Impact, sans-serif;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.accordion-icon {
+  flex: none;
+  font-family: "Oswald", Impact, sans-serif;
+  font-size: 22px;
+  color: var(--bws-gold);
+  transition: transform 240ms ease;
+}
+
+.accordion-trigger[aria-expanded="true"] .accordion-icon {
+  transform: rotate(45deg);
+}
+
+.accordion-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 280ms ease;
+  border-top: 1px solid transparent;
+}
+
+.accordion-panel.is-open {
+  grid-template-rows: 1fr;
+  border-top: 1px solid var(--line);
+}
+
+.accordion-panel-inner {
+  overflow: hidden;
+  min-height: 0;
+  padding: 0 20px;
+}
+
+.accordion-panel.is-open .accordion-panel-inner {
+  padding: 18px 20px;
+}
+
+.accordion-panel-inner p,
+.accordion-panel-inner ul {
+  margin: 0 0 12px;
+  color: #c8c8c8;
+  font-size: 13.5px;
+  line-height: 1.55;
+}
+
+.accordion-panel-inner p:last-child,
+.accordion-panel-inner ul:last-child {
+  margin-bottom: 0;
+}
+
+.accordion-panel-inner ul {
+  padding-left: 18px;
+}
+
+.accordion-panel-inner strong {
+  color: #ffffff;
+  font-weight: 900;
+}
+
+.recommendations-closing {
+  margin: 0;
+  padding-top: 28px;
+  border-top: 1px solid #2d2d2d;
+  color: #e6e6e6;
+  font-size: 15px;
+  font-style: italic;
+  line-height: 1.6;
 }
 
 .contact-section {
@@ -604,8 +839,15 @@ button {
   }
 
   .scroll-cue,
+  .process-section,
+  .recommendations-section,
   .contact-section {
     width: min(100%, 560px);
+  }
+
+  .process-steps {
+    grid-template-columns: 1fr;
+    gap: 22px;
   }
 
   .contact-section {

@@ -8,22 +8,19 @@
   </head>
   <body>
     <aside class="rail" aria-label="Instagram navigation">
-      <div class="brand-mark">◎</div>
+      <button class="brand-mark" id="navLogo" aria-label="Scroll to top">◎</button>
       <nav>
-        <button aria-label="Home">⌂</button>
-        <button aria-label="Reels">▷</button>
-        <button aria-label="Messages">✈</button>
-        <button aria-label="Search">⌕</button>
-        <button aria-label="Notifications">♡</button>
-        <button aria-label="Create">＋</button>
+        <button id="navHome" aria-label="Scroll to top">⌂</button>
+        <button id="navMessages" aria-label="Jump to contact section">✈</button>
+        <button id="navLike" aria-label="Like this post">♡</button>
+        <button id="navCreate" aria-label="Jump to process section">＋</button>
       </nav>
-      <button class="profile-dot" aria-label="Profile"></button>
+      <button class="profile-dot" id="profileDot" aria-label="Open Roman Jahandideh's portfolio"></button>
     </aside>
 
     <main class="page-shell">
       <section class="post-window" aria-label="Instagram-style carousel post">
         <div class="media-panel">
-          <div class="top-dots" aria-hidden="true"></div>
           <div class="carousel" id="carousel" tabindex="0" aria-live="polite">
             <div class="track" id="track"></div>
           </div>
@@ -39,8 +36,12 @@
               <strong>builtwithscience.spec</strong>
               <span>Interactive carousel submission</span>
             </div>
-            <button class="follow">Following</button>
-            <button class="more" aria-label="More options">•••</button>
+            <button class="follow" id="followBtn">Follow</button>
+            <button class="more" id="moreBtn" aria-label="More options" aria-haspopup="true" aria-expanded="false">•••</button>
+            <div class="more-menu" id="moreMenu" hidden>
+              <a href="https://github.com/RomanJahandideh/bws-ad-showcase" target="_blank" rel="noreferrer" id="viewSourceLink">View source on GitHub</a>
+              <button type="button" id="copyLinkBtn">Copy link to this post</button>
+            </div>
           </header>
 
           <div class="caption-scroll">
@@ -55,16 +56,16 @@
 
           <footer class="actions">
             <div class="action-row">
-              <button aria-label="Like">♡</button>
-              <button aria-label="Comment">◯</button>
-              <button aria-label="Share">↗</button>
-              <button class="save" aria-label="Save">□</button>
+              <button id="likeBtn" aria-label="Like">♡</button>
+              <button id="commentBtn" aria-label="Comment">◯</button>
+              <button id="shareBtn" aria-label="Share">↗</button>
+              <button class="save" id="saveBtn" aria-label="Save">□</button>
             </div>
-            <strong id="likes">18,420 likes</strong>
+            <strong id="likes">2,946 likes</strong>
             <span class="date">4 days ago</span>
             <label class="comment-box">
               <span>Add a comment...</span>
-              <input aria-label="Add a comment" />
+              <input id="commentInput" aria-label="Add a comment" />
             </label>
           </footer>
         </aside>
@@ -74,6 +75,117 @@
         <span>Interactive concept — swipe the post above to explore</span>
         <strong>View Contact</strong>
       </a>
+
+      <section class="process-section" aria-label="Creative workflow for the carousel images">
+        <h2>Process</h2>
+        <p class="process-intro">How the three slides went from brief to finished image.</p>
+
+        <ol class="process-steps">
+          <li>
+            <span class="step-index">01</span>
+            <div>
+              <h3>Research</h3>
+              <p>Pulled sample briefs and audited how other fitness and supplement brands format a hook → insight → takeaway carousel.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-index">02</span>
+            <div>
+              <h3>Narrow down</h3>
+              <p>Shortlisted the directions that matched the brand voice and the brief, and dropped the rest.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-index">03</span>
+            <div>
+              <h3>Personalize &amp; sketch</h3>
+              <p>Sketched the idea: let each slide's central visual literally hold the food its message is about.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-index">04</span>
+            <div>
+              <h3>Find the elements</h3>
+              <p>Sourced the food photography, glass-vessel references, icons, and BWS type system the sketch needed.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-index">05</span>
+            <div>
+              <h3>Build in Illustrator</h3>
+              <p>Laid out typography, logo, color, and grid for every slide in Adobe Illustrator.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-index">06</span>
+            <div>
+              <h3>AI-generated composition</h3>
+              <p>Generated and tested the food-filled vessel composites with AI, refining the prompt until the composition and lighting matched the brief.</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <section class="recommendations-section" aria-label="Instagram page improvement recommendations">
+        <h2>Recommendations</h2>
+        <p class="process-intro">Instagram page improvement ideas for @builtwithscience — tap a card to expand.</p>
+
+        <div class="accordion" id="recommendationsAccordion">
+          <div class="accordion-item">
+            <button type="button" class="accordion-trigger" aria-expanded="true" aria-controls="rec-panel-1" id="rec-trigger-1">
+              <span class="accordion-index">01</span>
+              <span class="accordion-title">Strengthen the visual hierarchy of carousel covers</span>
+              <span class="accordion-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="accordion-panel is-open" id="rec-panel-1" role="region" aria-labelledby="rec-trigger-1" aria-hidden="false">
+              <div class="accordion-panel-inner">
+                <p>Built With Science already has a recognizable visual identity: bold typography, blue/white/black color blocking, fitness imagery, and science-backed messaging. However, some covers feel visually crowded because the headline, image, data, and supporting text compete for attention at the same time.</p>
+                <p>I would recommend creating a more consistent cover system with a clearer hierarchy: one dominant hook, one strong visual, and minimal supporting text. For example, each cover could follow a tighter structure: bold headline at the top or left, one main image or diagram as the visual anchor, and a small brand marker in a fixed position.</p>
+                <p><strong>Expected outcome:</strong> This would make the grid easier to scan, improve first-slide readability, and increase swipe-through because users can understand the topic instantly before deciding to engage.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="rec-panel-2" id="rec-trigger-2">
+              <span class="accordion-index">02</span>
+              <span class="accordion-title">Turn science-heavy posts into clearer visual stories</span>
+              <span class="accordion-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="accordion-panel" id="rec-panel-2" role="region" aria-labelledby="rec-trigger-2" aria-hidden="true">
+              <div class="accordion-panel-inner">
+                <p>The page does a strong job using research-based topics, but some scientific content could be simplified more visually. When posts include studies, data, or comparisons, I would suggest building each carousel around a simple narrative: problem, evidence, takeaway.</p>
+                <p>For example, instead of showing a complex scatter plot or dense study information immediately, the design could first introduce the question, then show a simplified visual comparison, then end with a practical rule the audience can apply. Charts should feel like part of the story, not like screenshots from a paper. Small annotations, highlighted zones, and simplified labels would help make the science easier to digest.</p>
+                <p><strong>Expected outcome:</strong> This would protect the scientific credibility of the brand while making the content more accessible. It would likely improve saves and shares because users would better understand the information without needing to read the caption.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="rec-panel-3" id="rec-trigger-3">
+              <span class="accordion-index">03</span>
+              <span class="accordion-title">Add more repeatable content formats to reduce grid fatigue</span>
+              <span class="accordion-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="accordion-panel" id="rec-panel-3" role="region" aria-labelledby="rec-trigger-3" aria-hidden="true">
+              <div class="accordion-panel-inner">
+                <p>The current page is strong, but many posts rely on similar visual patterns: big type, blue backgrounds, fitness photos, and comparison-style layouts. This works, but over time the grid can feel slightly repetitive. I would recommend developing a few repeatable content formats that each serve a different purpose, for example:</p>
+                <ul>
+                  <li><strong>Myth vs. Reality</strong> — posts for high-share topics</li>
+                  <li><strong>Quick Calculator</strong> — posts for practical fitness/nutrition guidance</li>
+                  <li><strong>Study Breakdown</strong> — posts for scientific credibility</li>
+                  <li><strong>Mistake/Fix</strong> — posts for exercise education</li>
+                  <li><strong>Meme-style</strong> — posts for reach and relatability</li>
+                </ul>
+                <p>Each format could still use the same brand colors and typography, but with a slightly different layout system so the page feels more dynamic.</p>
+                <p><strong>Expected outcome:</strong> This would create more variety while keeping brand consistency. It would also help the audience recognize content types faster, improve retention across the page, and give the team clearer templates for scaling content production.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="recommendations-closing">Overall, I think the biggest opportunity is not changing the brand direction, but refining the system: clearer covers, more digestible science visuals, and stronger repeatable content formats that make the page feel both more premium and easier to engage with.</p>
+      </section>
 
       <section class="contact-section" id="contact-info" aria-label="Roman Jahandideh contact information">
         <div class="contact-copy">

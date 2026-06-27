@@ -106,3 +106,121 @@ carousel.addEventListener("keydown", (event) => {
 });
 
 renderSlides();
+
+function showToast(message) {
+  const toast = document.createElement("div");
+  toast.className = "toast";
+  toast.textContent = message;
+  document.body.appendChild(toast);
+  requestAnimationFrame(() => toast.classList.add("visible"));
+  setTimeout(() => {
+    toast.classList.remove("visible");
+    setTimeout(() => toast.remove(), 200);
+  }, 1600);
+}
+
+async function copyPageLink() {
+  try {
+    await navigator.clipboard.writeText(window.location.href);
+    showToast("Link copied to clipboard");
+  } catch {
+    showToast(window.location.href);
+  }
+}
+
+let likeCount = parseInt(carouselPost.likes.replace(/[^0-9]/g, ""), 10);
+let liked = false;
+const likeBtn = document.getElementById("likeBtn");
+const navLike = document.getElementById("navLike");
+const likesLabel = document.getElementById("likes");
+
+function setLiked(next) {
+  liked = next;
+  likeCount += liked ? 1 : -1;
+  likeBtn.textContent = liked ? "♥" : "♡";
+  likeBtn.classList.toggle("liked", liked);
+  navLike.textContent = liked ? "♥" : "♡";
+  navLike.classList.toggle("liked", liked);
+  likesLabel.textContent = `${likeCount.toLocaleString("en-US")} likes`;
+}
+
+likeBtn.addEventListener("click", () => setLiked(!liked));
+navLike.addEventListener("click", () => setLiked(!liked));
+
+const saveBtn = document.getElementById("saveBtn");
+let saved = false;
+saveBtn.addEventListener("click", () => {
+  saved = !saved;
+  saveBtn.textContent = saved ? "■" : "□";
+  saveBtn.classList.toggle("saved", saved);
+});
+
+const commentInput = document.getElementById("commentInput");
+document.getElementById("commentBtn").addEventListener("click", () => commentInput.focus());
+commentInput.addEventListener("keydown", (event) => {
+  if (event.key !== "Enter" || !commentInput.value.trim()) return;
+  const entry = document.createElement("p");
+  entry.className = "comment";
+  entry.innerHTML = `<strong>you</strong> ${commentInput.value.trim()}`;
+  document.querySelector(".caption-scroll").appendChild(entry);
+  commentInput.value = "";
+  entry.scrollIntoView({ block: "nearest" });
+});
+
+document.getElementById("shareBtn").addEventListener("click", async () => {
+  if (navigator.share) {
+    try {
+      await navigator.share({ title: document.title, url: window.location.href });
+      return;
+    } catch {
+      return;
+    }
+  }
+  copyPageLink();
+});
+
+const followBtn = document.getElementById("followBtn");
+followBtn.addEventListener("click", () => {
+  const following = followBtn.classList.toggle("following");
+  followBtn.textContent = following ? "Following" : "Follow";
+});
+
+const moreBtn = document.getElementById("moreBtn");
+const moreMenu = document.getElementById("moreMenu");
+moreBtn.addEventListener("click", () => {
+  const open = moreMenu.hasAttribute("hidden");
+  if (open) moreMenu.removeAttribute("hidden");
+  else moreMenu.setAttribute("hidden", "");
+  moreBtn.setAttribute("aria-expanded", String(open));
+});
+document.addEventListener("click", (event) => {
+  if (!moreMenu.contains(event.target) && event.target !== moreBtn && !moreMenu.hasAttribute("hidden")) {
+    moreMenu.setAttribute("hidden", "");
+    moreBtn.setAttribute("aria-expanded", "false");
+  }
+});
+document.getElementById("copyLinkBtn").addEventListener("click", () => {
+  copyPageLink();
+  moreMenu.setAttribute("hidden", "");
+  moreBtn.setAttribute("aria-expanded", "false");
+});
+document.getElementById("viewSourceLink").addEventListener("click", () => {
+  moreMenu.setAttribute("hidden", "");
+  moreBtn.setAttribute("aria-expanded", "false");
+});
+
+document.querySelectorAll(".accordion-trigger").forEach((trigger) => {
+  trigger.addEventListener("click", () => {
+    const panel = document.getElementById(trigger.getAttribute("aria-controls"));
+    const open = trigger.getAttribute("aria-expanded") !== "true";
+    trigger.setAttribute("aria-expanded", String(open));
+    panel.classList.toggle("is-open", open);
+    panel.setAttribute("aria-hidden", String(!open));
+  });
+});
+
+document.getElementById("navLogo").addEventListener("click", () => carousel.scrollIntoView({ behavior: "smooth", block: "start" }));
+document.getElementById("navHome").addEventListener("click", () => carousel.scrollIntoView({ behavior: "smooth", block: "start" }));
+document.getElementById("navMessages").addEventListener("click", () => document.getElementById("contact-info").scrollIntoView({ behavior: "smooth", block: "start" }));
+document.getElementById("navCreate").addEventListener("click", () => document.querySelector(".process-section").scrollIntoView({ behavior: "smooth", block: "start" }));
+document.getElementById("profileDot").addEventListener("click", () => window.open("https://romanjahandideh.com", "_blank", "noreferrer"));
